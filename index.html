@@ -1077,13 +1077,13 @@
             
 <div class="embedded-website">
  
-         <iframe 
-        src="https://radzid.github.io/RZMOU/#world-map" 
- 
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
-
+    
+    <iframe 
+            id="delayed-iframe"
+            data-src="https://radzid.github.io/RZMOU/#world-map"
+            frameborder="0"
+            style="display: none;">
+        </iframe>
     
     <p>Your browser doesn't support iframes. <a href="https://www.example.com">Click here</a> to view the content.</p>
 </div>
@@ -1451,31 +1451,20 @@
         });
         
   
-document.addEventListener('DOMContentLoaded', function() {
-     window.scrollTo(0, 0);
-    
-     setTimeout(function() {
-         window.scrollTo(0, 0);
+     setTimeout(() => {
+        const iframe = document.getElementById("delayed-iframe");
+        iframe.src = iframe.getAttribute("data-src");
+        iframe.style.display = "block";
         
-         document.querySelectorAll('iframe').forEach(function(iframe) {
-            try {
-                if (iframe.contentWindow) {
-                    iframe.contentWindow.blur();
-                     iframe.contentWindow.scrollTo(0, 0);
-                }
-            } catch (e) {
-                console.log("Iframe security restriction: ", e);
-            }
-        });
+         iframe.onload = () => window.scrollTo(0, 0);
+    }, 1000);
+
+     window.addEventListener('DOMContentLoaded', () => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        let scrollLock = setInterval(() => window.scrollTo(0, 0), 100);
+        setTimeout(() => clearInterval(scrollLock), 3000);
+    });
         
-         window.focus();
-    }, 100);
-});
-
- window.addEventListener('load', function() {
-    window.scrollTo(0, 0);
-});
-
     </script>
 </body>
 </html>
