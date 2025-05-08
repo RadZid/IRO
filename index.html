@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PU-RadZid International Relations Office</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('iro.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .goal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .function-card:hover .function-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+        
+        .map-container {
+            height: 400px;
+            background-color: #e5e7eb;
+        }
+        
+        .partner-logo {
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .stats-counter {
+            transition: all 0.5s ease;
+        }
+        
+        .scholarship-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        .scholarship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flag-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+        }
+
+
+.embedded-website {
+    width: 90%;
+    margin: 0 auto; /* Centers horizontally */
+    position: relative;
+    overflow: hidden;
+    padding-top: 50.625%; /* 90% of 56.25% to maintain 16:9 ratio */
+}
+
+.embedded-website iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+
+
+     /* Photo container styling */
+        .photo-section {
+            width: 50%;
+            margin: 40px auto; /* Centers horizontally with top/bottom margin */
+            text-align: center; /* Centers content inside */
+            overflow: hidden; /* Ensures animations stay within bounds */
+        }
+        
+        /* Photo styling with animation */
+        .photo-container {
+            width: 100%;
+            position: relative;
+            border-radius: 8px; /* Optional rounded corners */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Optional shadow */
+            overflow: hidden;
+            animation: fadeInScale 1.5s ease-out forwards;
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Hover effect - optional */
+        .photo-container:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Optional caption styling */
+        .photo-caption {
+            margin-top: 15px;
+            font-family: Arial, sans-serif;
+            color: #555;
+            font-size: 1.1em;
+            animation: fadeIn 2s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50" alt="PU Logo" class="h-12 mr-3">
+                <div>
+                    <h1 class="text-xl font-bold text-blue-800">PU-RadZid International Relations Office</h1>
+                    <p class="text-xs text-gray-600">Building Global Connections</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="text-blue-700 font-medium hover:text-blue-900">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-700">About</a>
+                <a href="#functions" class="text-gray-700 hover:text-blue-700">Core Functions</a>
+                <a href="#scholarships" class="text-gray-700 hover:text-blue-700">Scholarships</a>
+                <a href="#projects" class="text-gray-700 hover:text-blue-700">Global Projects</a>
+                <a href="#partnerships" class="text-gray-700 hover:text-blue-700">Partnerships</a>
+                <a href="#exchange" class="text-gray-700 hover:text-blue-700">Exchange</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-700">Contact</a>
+            </nav>
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white py-2 px-4 shadow-lg" id="mobile-menu">
+            <a href="#home" class="block py-2 text-blue-700">Home</a>
+            <a href="#about" class="block py-2 text-gray-700">About</a>
+            <a href="#functions" class="block py-2 text-gray-700">Core Functions</a>
+            <a href="#scholarships" class="block py-2 text-gray-700">Scholarships</a>
+            <a href="#projects" class="block py-2 text-gray-700">Global Projects</a>
+            <a href="#partnerships" class="block py-2 text-gray-700">Partnerships</a>
+            <a href="#exchange" class="block py-2 text-gray-700">Exchange</a>
+            <a href="#contact" class="block py-2 text-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32" id="home">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Expanding PU's Global Footprint</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Fostering international collaboration, research excellence, and cultural exchange to position PU as a globally recognized institution.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#functions" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Explore Our Work</a>
+                <a href="#scholarships" class="bg-transparent hover:bg-white hover:text-blue-800 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300">View Scholarships</a>
+
+                <a href="#exchange" class="bg-transparent hover:bg-white hover:text-blue-800 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300">View Exchange Program</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-sm stats-counter">
+                    <div class="text-4xl font-bold text-blue-700 mb-2" id="partners-count">0</div>
+                    <div class="text-gray-600">International Partners</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm stats-counter">
+                    <div class="text-4xl font-bold text-blue-700 mb-2" id="students-count">0</div>
+                    <div class="text-gray-600">Exchange Students</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm stats-counter">
+                    <div class="text-4xl font-bold text-blue-700 mb-2" id="research-count">0</div>
+                    <div class="text-gray-600">Joint Research Projects</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm stats-counter">
+                    <div class="text-4xl font-bold text-blue-700 mb-2" id="countries-count">0</div>
+                    <div class="text-gray-600">Countries Represented</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About IRO Section -->
+    <section class="py-16 bg-white" id="about">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About the International Relations Office</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <img src="iro3.jpg" alt="International Students" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Strategic Goals</h3>
+                    <p class="text-gray-600 mb-6">The International Relations Office (IRO) is dedicated to advancing PU's global engagement through strategic initiatives that foster academic excellence, research collaboration, and cultural diversity.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start goal-card bg-gray-50 p-6 rounded-lg transition duration-300">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-handshake text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Strategic Partnerships</h4>
+                                <p class="text-gray-600">Develop and sustain strategic international partnerships with universities, research institutions, and organizations worldwide.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start goal-card bg-gray-50 p-6 rounded-lg transition duration-300">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-exchange-alt text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Academic Exchange</h4>
+                                <p class="text-gray-600">Promote academic, research, and cultural exchange programs for students, faculty, and staff.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start goal-card bg-gray-50 p-6 rounded-lg transition duration-300">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-globe text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Global Visibility</h4>
+                                <p class="text-gray-600">Enhance PU's international visibility and improve its performance in global rankings and accreditations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Functions Section -->
+    <section class="py-16 bg-gray-50" id="functions">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Core Functions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ten key functional areas that serve as pillars of PU's international strategy</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap justify-center mb-8 gap-2">
+                <button class="tab-button px-4 py-2 rounded-full bg-blue-600 text-white" data-tab="tab1">Partnerships</button>
+                <button class="tab-button px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-tab="tab2">Mobility</button>
+                <button class="tab-button px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-tab="tab3">Research</button>
+                <button class="tab-button px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-tab="tab4">Rankings</button>
+                <button class="tab-button px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300" data-tab="tab5">Visits</button>
+            </div>
+            
+            <!-- Tab Content -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <!-- Tab 1 Content -->
+                <div id="tab1" class="tab-content active">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">International Partnerships and Collaboration</h3>
+                            <p class="text-gray-600 mb-6">Building and maintaining strategic relationships with institutions worldwide to foster academic and research collaboration.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-file-signature text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Establishing and Managing MoUs/Agreements</h4>
+                                        <p class="text-gray-600 text-sm">Developing formal partnerships through memoranda of understanding and collaborative agreements.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-flask text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Coordinating Joint Research Projects</h4>
+                                        <p class="text-gray-600 text-sm">Facilitating collaborative research initiatives between PU faculty and international counterparts.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-exchange-alt text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Academic Exchange Programs</h4>
+                                        <p class="text-gray-600 text-sm">Managing student and faculty exchange programs with partner institutions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-blue-50 p-6 rounded-lg h-full">
+                                <h4 class="font-bold text-gray-800 mb-4">Recent Partnership Highlights</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex items-center mb-2">
+                                            <img src="https://via.placeholder.com/40" alt="University Logo" class="h-8 w-8 rounded-full mr-3">
+                                            <span class="font-medium">University of Cambridge</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">New joint PhD program in Environmental Sciences launched in 2023.</p>
+                                    </div>
+                                    
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex items-center mb-2">
+                                            <img src="https://via.placeholder.com/40" alt="University Logo" class="h-8 w-8 rounded-full mr-3">
+                                            <span class="font-medium">ETH Zurich</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Research collaboration in Robotics and AI with 5 faculty exchanges planned.</p>
+                                    </div>
+                                    
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex items-center mb-2">
+                                            <img src="https://via.placeholder.com/40" alt="University Logo" class="h-8 w-8 rounded-full mr-3">
+                                            <span class="font-medium">National University of Singapore</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Student exchange program expanded to include Business and Engineering disciplines.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab 2 Content -->
+                <div id="tab2" class="tab-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Student and Faculty Mobility</h3>
+                            <p class="text-gray-600 mb-6">Facilitating international experiences for students and faculty through exchange programs, scholarships, and support services.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-plane text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Student Mobility Programs</h4>
+                                        <p class="text-gray-600 text-sm">Managing inbound and outbound student exchange programs including Erasmus+, ISEP, and bilateral exchanges.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-graduation-cap text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">International Scholarships and Funding</h4>
+                                        <p class="text-gray-600 text-sm">Identifying and facilitating access to international scholarship opportunities for students and faculty.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-hands-helping text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Orientation and Support Services</h4>
+                                        <p class="text-gray-600 text-sm">Providing comprehensive support services for international students including orientation, visa assistance, and cultural adaptation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-blue-50 p-6 rounded-lg h-full">
+                                <h4 class="font-bold text-gray-800 mb-4">Mobility Program Statistics</h4>
+                                <div class="space-y-6">
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm font-medium">Outbound Students</span>
+                                            <span class="text-sm font-medium">78%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm font-medium">Inbound Students</span>
+                                            <span class="text-sm font-medium">65%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 65%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm font-medium">Faculty Exchanges</span>
+                                            <span class="text-sm font-medium">42%</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 42%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="pt-4">
+                                        <p class="text-sm text-gray-600">*Percentage growth in participation over the last 3 years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab 3 Content -->
+                <div id="tab3" class="tab-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">International Research and Development</h3>
+                            <p class="text-gray-600 mb-6">Promoting and facilitating international research collaborations, funding opportunities, and knowledge exchange.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-money-bill-wave text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Research Funding Opportunities</h4>
+                                        <p class="text-gray-600 text-sm">Identifying and facilitating access to international research grants and funding programs.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-users text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Collaborative Research</h4>
+                                        <p class="text-gray-600 text-sm">Facilitating international research teams and joint publications between PU faculty and global partners.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-chalkboard-teacher text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Conferences and Workshops</h4>
+                                        <p class="text-gray-600 text-sm">Organizing and promoting international research conferences, seminars, and workshops.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-blue-50 p-6 rounded-lg h-full">
+                                <h4 class="font-bold text-gray-800 mb-4">Upcoming Research Events</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex justify-between mb-2">
+                                            <span class="font-medium text-blue-700">Global Health Symposium</span>
+                                            <span class="text-sm text-gray-500">Oct 15-17, 2023</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Jointly organized with Johns Hopkins University. Call for papers open until August 30.</p>
+                                        <div class="mt-2">
+                                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Public Health</span>
+                                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Epidemiology</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex justify-between mb-2">
+                                            <span class="font-medium text-blue-700">AI Ethics Workshop</span>
+                                            <span class="text-sm text-gray-500">Nov 5, 2023</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Featuring experts from MIT, Stanford, and PU's Computer Science department.</p>
+                                        <div class="mt-2">
+                                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Artificial Intelligence</span>
+                                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Ethics</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex justify-between mb-2">
+                                            <span class="font-medium text-blue-700">Sustainable Energy Conference</span>
+                                            <span class="text-sm text-gray-500">Dec 10-12, 2023</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600">In collaboration with TU Delft and NREL. Early bird registration available.</p>
+                                        <div class="mt-2">
+                                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Renewable Energy</span>
+                                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Sustainability</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab 4 Content -->
+                <div id="tab4" class="tab-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Global Academic Recognition and University Ranking</h3>
+                            <p class="text-gray-600 mb-6">Enhancing PU's international reputation and position in global university rankings through strategic initiatives.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-trophy text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">University Ranking Strategies</h4>
+                                        <p class="text-gray-600 text-sm">Developing and implementing strategies to improve PU's position in QS, THE, ARWU, and other global rankings.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-award text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">International Accreditations</h4>
+                                        <p class="text-gray-600 text-sm">Facilitating international accreditation processes for PU's programs and schools (e.g., AACSB, ABET, EQUIS).</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-chart-line text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Performance Metrics</h4>
+                                        <p class="text-gray-600 text-sm">Monitoring and improving key performance indicators that influence global rankings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-blue-50 p-6 rounded-lg h-full">
+                                <h4 class="font-bold text-gray-800 mb-4">PU's Ranking Progress</h4>
+                                <div class="space-y-6">
+                                    <div>
+                                        <h5 class="font-medium mb-2">QS World University Rankings</h5>
+                                        <div class="flex items-center">
+                                            <div class="text-3xl font-bold text-blue-700 mr-4">401-450</div>
+                                            <div class="text-green-600 flex items-center">
+                                                <i class="fas fa-arrow-up mr-1"></i>
+                                                <span>+50 positions</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mt-1">2023 ranking (2022: 451-500)</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h5 class="font-medium mb-2">THE World University Rankings</h5>
+                                        <div class="flex items-center">
+                                            <div class="text-3xl font-bold text-blue-700 mr-4">351-400</div>
+                                            <div class="text-green-600 flex items-center">
+                                                <i class="fas fa-arrow-up mr-1"></i>
+                                                <span>+30 positions</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mt-1">2023 ranking (2022: 401-500)</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h5 class="font-medium mb-2">QS Subject Rankings</h5>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span>Engineering & Technology</span>
+                                                <span class="font-medium">#187</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Life Sciences</span>
+                                                <span class="font-medium">#251-300</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Social Sciences</span>
+                                                <span class="font-medium">#301-350</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab 5 Content -->
+                <div id="tab5" class="tab-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Invitations, Visites, and Cultural Exchange</h3>
+                            <p class="text-gray-600 mb-6">Facilitating international delegations, expert visits, and cultural exchange programs to enrich PU's global engagement.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-users text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Hosting International Delegations</h4>
+                                        <p class="text-gray-600 text-sm">Coordinating visits from international university leaders, government officials, and academic delegations.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-user-tie text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Inviting International Experts</h4>
+                                        <p class="text-gray-600 text-sm">Organizing lectures, workshops, and conferences featuring distinguished international scholars and professionals.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start function-card">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4 function-icon transition duration-300">
+                                        <i class="fas fa-globe-americas text-blue-700 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Cultural Exchange Programs</h4>
+                                        <p class="text-gray-600 text-sm">Developing programs that promote intercultural understanding and global citizenship among students and staff.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-blue-50 p-6 rounded-lg h-full">
+                                <h4 class="font-bold text-gray-800 mb-4">Recent Distinguished Visitors</h4>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex items-center mb-2">
+                                            <img src="https://via.placeholder.com/50" alt="Speaker" class="h-10 w-10 rounded-full mr-3">
+                                            <div>
+                                                <h5 class="font-medium">Dr. Samantha Chen</h5>
+                                                <p class="text-xs text-gray-500">Harvard University</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Delivered keynote on "Global Trends in Higher Education" at PU's International Education Week.</p>
+                                    </div>
+                                    
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex items-center mb-2">
+                                            <img src="https://via.placeholder.com/50" alt="Speaker" class="h-10 w-10 rounded-full mr-3">
+                                            <div>
+                                                <h5 class="font-medium">Prof. Klaus Müller</h5>
+                                                <p class="text-xs text-gray-500">Technical University of Munich</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Conducted workshop on "Industry-Academia Collaboration in Engineering".</p>
+                                    </div>
+                                    
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <div class="flex items-center mb-2">
+                                            <img src="https://via.placeholder.com/50" alt="Speaker" class="h-10 w-10 rounded-full mr-3">
+                                            <div>
+                                                <h5 class="font-medium">Dr. Aisha Rahman</h5>
+                                                <p class="text-xs text-gray-500">University of Cape Town</p>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600">Led seminar series on "Decolonizing the Curriculum in Global Higher Education".</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+    
+
+
+
+
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- Students Exchange Section -->
+    <section class="py-16 bg-gray-50" id="exchange">
+        <div class="container mx-auto px-4">
+    
+ 
+
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">  </h2>
+
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Students' Exchange Program</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Exchange programs including Erasmus+, ISEP, and bilateral exchanges</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+
+        <div class="photo-section">
+           <div class="photo-container">
+            <img src="iro4.jpg" alt="Description of your photo">
+           </div>
+
+ 
+        </div>
+
+            <div class="text-center">
+
+            <a href="https://internship.ptuk.edu.ps/ar/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    View Students' Exchange Program
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- International Scholarships Section -->
+    <section class="py-16 bg-white" id="scholarships">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">International Scholarships</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Funding opportunities for PU students to study abroad and international students to study at PU</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Scholarship 1 -->
+                <div class="scholarship-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/40" alt="Flag" class="flag-icon mr-3">
+                        <h3 class="text-xl font-bold text-blue-800">Erasmus+ Mobility Grants</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">EU-funded scholarships for semester exchanges at European partner universities.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Up to €850/month</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Scholarship 2 -->
+                <div class="scholarship-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/40" alt="Flag" class="flag-icon mr-3">
+                        <h3 class="text-xl font-bold text-blue-800">Fulbright-PU Partnership</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Full scholarships for PU students to pursue Master's degrees in the United States.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full Funding</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Scholarship 3 -->
+                <div class="scholarship-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/40" alt="Flag" class="flag-icon mr-3">
+                        <h3 class="text-xl font-bold text-blue-800">PU International Excellence</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Merit-based scholarships for outstanding international students at PU.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">50-100% Tuition</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Scholarship 4 -->
+                <div class="scholarship-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/40" alt="Flag" class="flag-icon mr-3">
+                        <h3 class="text-xl font-bold text-blue-800">Chevening-PU Scholarship</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">UK government scholarships for PU students to study in the UK.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full Funding</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Scholarship 5 -->
+                <div class="scholarship-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/40" alt="Flag" class="flag-icon mr-3">
+                        <h3 class="text-xl font-bold text-blue-800">ASEAN Research Fellowship</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Short-term research funding for PU students in Southeast Asian countries.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Up to $5,000</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Scholarship 6 -->
+                <div class="scholarship-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/40" alt="Flag" class="flag-icon mr-3">
+                        <h3 class="text-xl font-bold text-blue-800">PU Faculty Mobility Grant</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Funding for PU faculty to teach or conduct research at partner institutions.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Up to $3,000</span>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://ptuk.edu.ps/en/offices-units-divisions/aarticlepage.php?artid=1887&name=international-relations-office" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    View All Scholarship Opportunities
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Projects Section -->
+    <section class="py-16 bg-gray-50" id="projects">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Global Projects & Initiatives</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">PU's participation in international research, development, and educational projects</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Project 1 -->
+                <div class="project-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-leaf text-blue-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-800">Global Sustainability Initiative</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">A 5-year collaborative project with 12 universities worldwide to develop sustainable campus practices and curriculum.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Sustainability</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Curriculum Development</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">EU Funded</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>2022-2027</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-globe-europe mr-2"></i>
+                        <span>8 Countries</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-robot text-blue-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-800">AI for Social Good</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">International research consortium developing AI solutions for healthcare, education, and environmental challenges.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Artificial Intelligence</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Social Impact</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Industry Partners</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>2021-2025</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-globe-americas mr-2"></i>
+                        <span>15 Institutions</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-graduation-cap text-blue-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-800">Global Virtual Exchange</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Online collaborative learning initiative connecting PU students with peers worldwide for intercultural projects.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Digital Education</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Intercultural Learning</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">UNESCO Partner</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Ongoing</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-users mr-2"></i>
+                        <span>1,200+ Students</span>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-flask text-blue-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-800">Nanotech Research Network</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">International research partnership focusing on nanotechnology applications in medicine and energy.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Nanotechnology</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Medical Research</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">ERC Funding</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>2020-2024</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-microscope mr-2"></i>
+                        <span>7 Labs</span>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-language text-blue-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-800">Multilingual Education</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Developing multilingual teaching resources and methodologies for diverse classrooms worldwide.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Education</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Linguistics</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">World Bank</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>2023-2026</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-globe-africa mr-2"></i>
+                        <span>Focus: Africa</span>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-heartbeat text-blue-700 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-800">Global Health Equity</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Addressing health disparities through international collaboration in medical education and practice.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Public Health</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">Medical Education</span>
+                        <span class="text-xs font-medium bg-purple-100 text-purple-800 px-2 py-1 rounded">WHO Partner</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>2021-Ongoing</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-hospital mr-2"></i>
+                        <span>22 Partners</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://ptuk.edu.ps/en/offices-units-divisions/projects.php?name=international-relations-office" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Explore All Global Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="py-16 bg-white" id="partnerships">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Global Network</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Strategic partnerships with leading institutions worldwide</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-lg shadow-sm flex items-center justify-center">
+                    <img src="https://via.placeholder.com/120x60" alt="Partner Logo" class="h-12">
+                </div>
+            </div>
+            
+<div class="embedded-website">
+    <iframe 
+        src="https://radzid.github.io/RZMOU/#world-map" 
+ 
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+    <p>Your browser doesn't support iframes. <a href="https://www.example.com">Click here</a> to view the content.</p>
+</div>
+
+            <div class="map-container rounded-lg shadow-lg mb-8">
+                <!-- Map placeholder - in a real implementation, this would be a Google Map or similar -->
+                <div class="flex items-center justify-center h-full text-gray-500">
+                    <i class="fas fa-map-marked-alt text-5xl mr-4"></i>
+                    <span class="text-xl">Interactive Map of Our Global Partnerships</span>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://ptuk.edu.ps/en/aarticlepage.php?artid=7" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    View All Partners
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+ 
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Voices from Our Global Community</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60" alt="Student" class="h-12 w-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Maria Gonzalez</h4>
+                            <p class="text-sm text-gray-600">Exchange Student from Spain</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"My semester at PU through the Erasmus+ program was transformative. The support from IRO made my transition seamless, and the academic experience exceeded my expectations."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60" alt="Professor" class="h-12 w-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Dr. James Wilson</h4>
+                            <p class="text-sm text-gray-600">Visiting Professor from Canada</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The IRO team facilitated an excellent research collaboration between our institutions. Their professionalism and attention to detail made the entire process efficient and productive."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60" alt="Alumni" class="h-12 w-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Ahmed Al-Mansoori</h4>
+                            <p class="text-sm text-gray-600">PU Alumni, now at MIT</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The international opportunities I accessed through IRO were instrumental in my academic journey. The exchange program to Germany shaped my research interests and career path."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We're here to help with your internationalization needs</p>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Address</h4>
+                                <p class="text-gray-600">International Relations Office<br>Administration Building, Room 205<br>PU - RadZid<br>123 University Avenue<br>City, Country 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                <p class="text-gray-600">iro@pu.edu<br>For general inquiries</p>
+                                <p class="text-gray-600 mt-2">exchange@pu.edu<br>For student mobility questions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Phone</h4>
+                                <p class="text-gray-600">+1 (123) 456-7890<br>Monday-Friday, 9am-5pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-1">Subject</label>
+                            <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select a topic</option>
+                                <option value="partnerships">Partnerships</option>
+                                <option value="exchange">Student Exchange</option>
+                                <option value="research">Research Collaboration</option>
+                                <option value="visits">Visiting Scholars</option>
+                                <option value="scholarships">Scholarships</option>
+                                <option value="projects">Global Projects</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-12 bg-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated with IRO News</h2>
+            <p class="text-lg mb-6 max-w-2xl mx-auto">Subscribe to our newsletter for the latest updates on international opportunities, events, and partnerships.</p>
+            
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+                <button type="submit" class="bg-blue-900 hover:bg-blue-800 px-6 py-3 rounded-r-lg font-medium transition duration-300">
+                    Subscribe
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About IRO</h3>
+                    <p class="text-gray-400 mb-4">The International Relations Office at PU - RadZid facilitates global engagement, international partnerships, and cross-cultural exchange.</p>
+                    <img src="https://via.placeholder.com/150x50" alt="PU Logo" class="h-10">
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#scholarships" class="text-gray-400 hover:text-white transition duration-300">Scholarships</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Global Projects</a></li>
+                        <li><a href="https://internship.ptuk.edu.ps/ar/" class="text-gray-400 hover:text-white transition duration-300">Student Exchange Programs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Faculty Mobility</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Research Collaboration</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">International Partnerships</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Global Rankings</a></li>
+
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://ptuk.edu.ps/ar/media/Why_Study_in_Palestine/" class="text-gray-400 hover:text-white transition duration-300">International Student Guide</a></li>
+                        <li><a href="https://ptuk.edu.ps/en/offices-units-divisions/aarticlepage.php?artid=1886&name=international-relations-office" class="text-gray-400 hover:text-white transition duration-300">Funding Opportunities</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Visa Information</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cultural Adaptation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <address class="not-italic text-gray-400">
+                        <p class="mb-2">International Relations Office</p>
+                        <p class="mb-2">PU - RadZid</p>
+                        <p class="mb-2">123 University Avenue</p>
+                        <p class="mb-4">City, Country 12345</p>
+                        <p class="mb-1"><i class="fas fa-phone-alt mr-2"></i> +1 (123) 456-7890</p>
+                        <p><i class="fas fa-envelope mr-2"></i> iro@pu.edu</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 PU - RadZid International Relations Office. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+ 
+
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and tabs
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-200', 'hover:bg-gray-300');
+                });
+                
+                // Add active class to clicked button
+                this.classList.remove('bg-gray-200', 'hover:bg-gray-300');
+                this.classList.add('bg-blue-600', 'text-white');
+                
+                // Show corresponding tab content
+                const tabId = this.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Animated counters
+        function animateCounter(elementId, target, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    clearInterval(timer);
+                    current = target;
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+
+        // Start counters when stats section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('partners-count', 120);
+                    animateCounter('students-count', 450);
+                    animateCounter('research-count', 85);
+                    animateCounter('countries-count', 40);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-counter');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+ 
