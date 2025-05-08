@@ -1446,14 +1446,40 @@
                 }
             });
         });
-        document.addEventListener('DOMContentLoaded', function() {
-    // Scroll to top when page loads
+ <!-- Place this right before </body> -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Immediate scroll to top (first line of defense)
     window.scrollTo(0, 0);
     
-    // Optional: Disable iframe focus
-    document.querySelector('iframe').contentWindow.blur();
-    window.focus();
+    // Secondary protection after 100ms delay (catches late-loading iframes)
+    setTimeout(function() {
+        // Scroll again in case iframe content shifted the page
+        window.scrollTo(0, 0);
+        
+        // Handle all iframes on the page
+        document.querySelectorAll('iframe').forEach(function(iframe) {
+            try {
+                if (iframe.contentWindow) {
+                    iframe.contentWindow.blur();
+                    // Extra protection: reset iframe scroll
+                    iframe.contentWindow.scrollTo(0, 0);
+                }
+            } catch (e) {
+                console.log("Iframe security restriction: ", e);
+            }
+        });
+        
+        // Final focus reclamation
+        window.focus();
+    }, 100);
 });
+
+// Nuclear option for stubborn cases (runs on full page load)
+window.addEventListener('load', function() {
+    window.scrollTo(0, 0);
+});
+</script>
 
     </script>
 </body>
