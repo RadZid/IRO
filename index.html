@@ -1080,9 +1080,9 @@
     <iframe 
         id="delayed-iframe"
         data-src="https://radzid.github.io/RZMOU/#world-map"
-        frameborder="0"
-     </iframe>
-
+         frameborder="0"
+        style="display: none;">  
+    </iframe>
     
     <p>Your browser doesn't support iframes. <a href="https://www.example.com">Click here</a> to view the content.</p>
 </div>
@@ -1448,41 +1448,12 @@
                 }
             });
         });
- <!-- Place this right before </body> -->
- 
-document.addEventListener('DOMContentLoaded', function() {
-    // Immediate scroll to top (first line of defense)
-    window.scrollTo(0, 0);
-    
-    // Secondary protection after 100ms delay (catches late-loading iframes)
-    setTimeout(function() {
-        // Scroll again in case iframe content shifted the page
-        window.scrollTo(0, 0);
         
-        // Handle all iframes on the page
-        document.querySelectorAll('iframe').forEach(function(iframe) {
-            try {
-                if (iframe.contentWindow) {
-                    iframe.contentWindow.blur();
-                    // Extra protection: reset iframe scroll
-                    iframe.contentWindow.scrollTo(0, 0);
-                }
-            } catch (e) {
-                console.log("Iframe security restriction: ", e);
-            }
-        });
-        
-        // Final focus reclamation
-        window.focus();
-    }, 100);
-});
-
-// Nuclear option for stubborn cases (runs on full page load)
-window.addEventListener('load', function() {
-    window.scrollTo(0, 0);
-});
-
-
+  setTimeout(() => {
+    const iframe = document.getElementById("delayed-iframe");
+    iframe.src = iframe.getAttribute("data-src");  
+    iframe.style.display = "block";  
+}, 1000); 
     </script>
 </body>
 </html>
